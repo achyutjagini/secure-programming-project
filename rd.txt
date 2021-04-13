@@ -1,0 +1,23 @@
+Hello, today we'll be presenting our "Stock purchasing" application for the secure programming in c course. With this program any user can create his/her account.After registering the details of user are stored in a CSV file.Next they can enter their balance, then check which shares they can buy according to their budget and check their portfolio.
+
+But why should we make this application secure?
+
+As thechnology evolves rapidly everyday it has done a lot of good to our world but has bought a few bad things along with it. Almost everyday where trading is a common practise around the world if anyone gains access to someone else's account or change the values of the shares according to their will then it can cause major financial issues.Hence it is important to secure such applications to avoid such issues.
+
+Now I'll go through the requirements for our project. We used C Programming Language that follows uses the C11 programming standard. Then we used gcc compiler and finally splint and flawfinder(static analysis tools) were used to statically analyze the code fragment in the file for security vulnerabilities and coding mistakes whereas flawfinder reports potential security flaws.
+
+We used data types such as pointers(structure and file),int,boolean,char.Next built in functions such as malloc,free,fopen,fwrite,fclose,strcmp,printf and scanf.We also created our own user defined functions like,ACCOUNT,disp_acc,disp,login(),reg_acc(),activity(),update().
+
+Before we run the program we'll see some safety recommendations that must be followed.MEM30-C not to access freed memory,MEM31-C to Free dynamically allocated memory when no longer needed,MEM36-C to not modify the alignment of objects by calling realloc(),STR30-C to not attempt to modify string literals,STR32-C  not to  pass a non-null-terminated character sequence to a library function that expects a string,FLP30-C not use floating-point variables as loop counters,FIO42-C to Close files when they are no longer needed and FIO46-C not access a closed file.
+
+Now we'll run the vulnerable program.
+
+So after executing the program this is what we saw: 1.If total cost of stocks more than remaining balance it results in negative balance. 
+                                                                                2.If the balance entered is larger than INT_Max the balance becomes -1.
+                                                                                3.if username entered more than 20 characters then user cannot login again.
+These are the vulnerabilities in the program that can cause major issues that must be avoides at all costs.
+
+Hence we must follow these methods:                      1.If total cost of stocks less than balance transaction is successful.
+                                                                                2.Balance entered should be less than value of INT_MAX.
+                                                                                3.Username must be less than 20 characters.
+
