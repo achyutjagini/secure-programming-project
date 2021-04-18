@@ -129,49 +129,80 @@ void activity()
                  printf("Invalid.\n");
                  continue;
                 }
-            if(tot>curr->bal)
-              {
-                 printf("Your balance is low.\n");
-                 continue;
-              }
+            
             if(choice ==1)
                {
                   tot = s*840;
+                  if(tot>curr->bal)
+                    {
+                      printf("Your balance is low!\n");
+                      continue;
+                    }
+                  else{
                   curr->ts =+s;
                   curr->bal-=tot;
+                    }
                }
             else if(choice ==2)
                {
                    tot = s*134;
+                   if(tot>curr->bal)
+                    {
+                      printf("Your balance is low!\n");
+                      continue;
+                    }
+                  else{
                    curr->ap =+s;
                    curr->bal-=tot;
+                     }
                }
             else if(choice ==3)
                {
                     tot = s*50;
+                    if(tot>curr->bal)
+                    {
+                      printf("Your balance is low!\n");
+                      continue;
+                    }
+                  else{
                     curr->k = +s;
                     curr->bal-=tot;
+                    }
                }
             else if(choice ==4)
                {
                    tot = s*171;
+                   if(tot>curr->bal)
+                    {
+                      printf("Your balance is low!\n");
+                      continue;
+                    }
+                  else{
                    curr->wd =+s;
                    curr->bal-=tot;
+                    }
                }
             else if(choice ==5)
                {
                     tot = s*539;
+                    if(tot>curr->bal)
+                    {
+                      printf("Your balance is low!\n");
+                      continue;
+                    }
+                  else{
                     curr->nf =+s;
                     curr->bal-=tot;
+                    }
                }
-            else
+             else
                {
                    printf("Invalid choice\n");
                 }
-             
-            printf("Total cost: $%d\n",tot);
-            printf("Your transaction is successful!\n");
-            update();
+              printf("Total cost: $%d\n",tot);
+              printf("Your transaction is successful!\n");
+              update();
+           
         }
        else if(c==3)
             {
